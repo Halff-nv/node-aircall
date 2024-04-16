@@ -46,3 +46,9 @@ app.post('/aircall/webhook', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server running at ${PORT}`);
 });
+
+
+// hello world
+app.get('/', (req, res) => {
+    res.send("Hello World");
+});
