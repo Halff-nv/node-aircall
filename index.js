@@ -36,7 +36,7 @@ app.post('/aircall/webhook', async (req, res) => {
 
             // create or update contact in Aircall
             try {
-                createOrUpdateContact(info[0]);
+                createOrUpdateContact(info[0], callData);
             } catch (e) {
                 console.log(e);
             }
