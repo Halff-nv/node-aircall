@@ -149,9 +149,9 @@ async function createOrUpdateContact(info_elem, callData) {
             // Create if contact does not exist
             const responseCreate = await axios.post(`https://api.aircall.io/v1/contacts`, {
                 first_name: info_elem?.name,
-                last_name: info_elem?.opdrachtgever,
+                last_name: `Ticket ${info_elem?.id}`,
                 company_name: info_elem?.location,
-                information: `Ticket ${info_elem?.id} - ${info_elem?.device}`,
+                information: `${info_elem?.opdrachtgever} - ${info_elem?.device}`,
                 "phone_numbers": [
                     {
                         "label": "Default",
@@ -169,9 +169,9 @@ async function createOrUpdateContact(info_elem, callData) {
             // Update if contact exists
             const responseUpdate = await axios.put(`https://api.aircall.io/v1/contacts/${callData.data.contact.id}`, {
                 first_name: info_elem?.name,
-                last_name: info_elem?.opdrachtgever,
+                last_name: `Ticket ${info_elem?.id}`,
                 company_name: info_elem?.location,
-                information: `Ticket ${info_elem?.id} - ${info_elem?.device}`,
+                information: `${info_elem?.opdrachtgever} - ${info_elem?.device}`,
                 "phone_numbers": [
                     {
                         "label": "Default",
