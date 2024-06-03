@@ -167,7 +167,7 @@ async function createOrUpdateContact(info_elem, callData) {
             console.log("Contact creation response:", responseCreate.data);
         } else {
             // Update if contact exists
-            const responseUpdate = await axios.put(`https://api.aircall.io/v1/contacts/${callData.data.contact.id}`, {
+            const responseUpdate = await axios.post(`https://api.aircall.io/v1/contacts/${callData.data.contact.id}`, {
                 first_name: info_elem?.name,
                 last_name: `Ticket ${info_elem?.id}`,
                 company_name: info_elem?.location,
