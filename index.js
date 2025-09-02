@@ -63,7 +63,7 @@ async function searchInfo(call_id) {
 
         // call our own back-end
         const response = await axios.get(fullURL, {});
-        console.log(JSON.stringify(response.data));
+        // console.log(JSON.stringify(response.data));
 
         // example return data:
         // [
@@ -140,8 +140,8 @@ async function createInfoCard(call_id, info_elem) {
 async function createOrUpdateContact(info_elem, callData) {
     try {
 
-        console.log("callData")
-        console.log(callData)
+        // console.log("callData")
+        // console.log(callData)
 
         // retreive aircall contact from callData
         if (callData.data.contact == null) {
@@ -164,7 +164,7 @@ async function createOrUpdateContact(info_elem, callData) {
                 }
             });
 
-            console.log("Contact creation response:", responseCreate.data);
+            // console.log("Contact creation response:", responseCreate.data);
         } else {
             // Update if contact exists
             const responseUpdate = await axios.post(`https://api.aircall.io/v1/contacts/${callData.data.contact.id}`, {
@@ -183,7 +183,7 @@ async function createOrUpdateContact(info_elem, callData) {
                     Authorization: `Basic ${basic_auth}`
                 }
             });
-            console.log("Contact update response:", responseUpdate.data);
+            // console.log("Contact update response:", responseUpdate.data);
 
             return true;
         }
